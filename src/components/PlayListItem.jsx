@@ -1,8 +1,12 @@
 import React from "react";
 
-const PlayListItem = ({ title, artist, length }) => {
+const PlayListItem = ({ title, artist, length, isActive }) => {
+  const itemClasses = `flex items-center justify-between p-2 rounded-lg cursor-pointer ${
+    isActive ? 'bg-gray-700' : 'hover:bg-gray-800'
+  }`;
+
   return (
-    <div className="flex items-center justify-between p-2 hover:bg-gray-800 rounded-lg cursor-pointer">
+    <div className={itemClasses}>
       <div className="flex-1">
         <h3 className="text-white text-lg font-medium">{title}</h3>
         <p className="text-gray-400 text-sm">{artist}</p>
