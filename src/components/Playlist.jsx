@@ -3,7 +3,7 @@ import PlayListItem from "./PlayListItem";
 
 const Playlist = () => {
   return (
-    <div className="flex w-full flex-col border-t border-gray-300 p-6 md:w-[50%] md:border-t-0 md:border-l">
+    <div className="flex w-full flex-col border-t border-gray-300 p-6 md:border-t-0 md:border-l">
       <h3 className="text-2xl font-bold mb-6">Playlist</h3>
       <div className="flex w-full flex-col space-y-4">
         <PlayListItem
