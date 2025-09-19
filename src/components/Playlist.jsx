@@ -1,27 +1,42 @@
-import React from 'react';
-import PlayListItem from './PlayListItem';
+import React from "react";
+import PlayListItem from "./PlayListItem";
 
 const Playlist = () => {
-  const songs = [
-    { title: "Song 1", artist: "Artist 1", length: "3:45", id: 1 },
-    { title: "Song 2", artist: "Artist 2", length: "4:10", id: 2 },
-    { title: "Song 3", artist: "Artist 3", length: "2:55", id: 3 },
-    { title: "Song 4", artist: "Artist 4", length: "5:01", id: 4 },
-  ];
-
-  const activeSongId = 2; // This would typically come from a state variable
-
   return (
-    <div className="w-full max-w-md">
-      {songs.map((song) => (
+    <div className="border-tertiary flex w-full flex-col border-t-[1px] p-6 md:w-[50%] md:border-t-0 md:border-l-[1px]">
+      <h3 className="text-lg font-semibold">Playlist</h3>
+      <div className="mt-4 flex w-full flex-col gap-1 pr-4">
         <PlayListItem
-          key={song.id}
-          title={song.title}
-          artist={song.artist}
-          length={song.length}
-          isActive={song.id === activeSongId}
+          title="Painted in Blue"
+          artist="Soul Canvas"
+          length="5:55"
+          isActive={true}
         />
-      ))}
+        <PlayListItem
+          title="Tidal Drift"
+          artist="Echoes of the Sea"
+          length="8:02"
+          isActive={false}
+        />
+        <PlayListItem
+          title="Fading Shadows"
+          artist="The Emberlight"
+          length="3:01"
+          isActive={false}
+        />
+        <PlayListItem
+          title="Cosmic Drift"
+          artist="Solar Flare"
+          length="5:01"
+          isActive={false}
+        />
+        <PlayListItem
+          title="Urban Serenade"
+          artist="Midnight Groove"
+          length="4:54"
+          isActive={false}
+        />
+      </div>
     </div>
   );
 };

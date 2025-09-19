@@ -3,8 +3,14 @@ import coverArtImage from '../assets/placeholder.svg';
 
 const CoverArt = () => {
   return (
-    <div className="w-32rem h-20% aspect-square overflow-hidden rounded-lg">
-      <img src={coverArtImage} alt="Cover Art" className="w-full h-full object-cover" />
+    <div className="w-full aspect-square bg-gray-200 rounded-lg overflow-hidden flex items-center justify-center">
+      <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+        <img 
+          src={coverArtImage} 
+          alt="Placeholder cover art" 
+          className="w-16 h-16 opacity-40"
+        />
+      </div>
     </div>
   );
 };

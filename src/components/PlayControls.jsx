@@ -1,23 +1,51 @@
-import React from "react";
-import { Repeat, SkipBack, Play, SkipForward, Shuffle } from 'lucide-react';
+import React, { useState } from "react";
+import { Repeat, SkipBack, Play, Pause, SkipForward } from 'lucide-react';
 
 const PlayControls = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlayPause = () => {
+    setIsPlaying(!isPlaying);
+  };
+
   return (
-    <div className="flex items-center justify-center space-x-4">
-      <button className="text-white hover:text-gray-400">
-        <Repeat size={24} />
+    <div className="flex items-center justify-center space-x-6">
+      {/* Playback Speed */}
+      <button className="text-black hover:text-gray-600 text-sm font-medium">
+        1x
       </button>
-      <button className="text-white hover:text-gray-400">
+      
+      {/* Previous */}
+      <button 
+        className="text-black hover:text-gray-600"
+        onClick={() => {}}
+      >
         <SkipBack size={24} />
       </button>
-      <button className="text-white bg-green-500 rounded-full p-2 hover:bg-green-600">
-        <Play size={32} fill="white" />
+      
+      {/* Play/Pause Button */}
+      <button 
+        className="bg-black text-white rounded-lg p-3 hover:bg-gray-800 transition-colors"
+        onClick={handlePlayPause}
+      >
+        {isPlaying ? (
+          <Pause size={28} fill="white" />
+        ) : (
+          <Play size={28} fill="white" />
+        )}
       </button>
-      <button className="text-white hover:text-gray-400">
+      
+      {/* Next */}
+      <button 
+        className="text-black hover:text-gray-600"
+        onClick={() => {}}
+      >
         <SkipForward size={24} />
       </button>
-      <button className="text-white hover:text-gray-400">
-        <Shuffle size={24} />
+      
+      {/* Repeat */}
+      <button className="text-black hover:text-gray-600">
+        <Repeat size={24} />
       </button>
     </div>
   );
