@@ -3,14 +3,14 @@ import PlayListItem from "./PlayListItem";
 
 const Playlist = () => {
   return (
-    <div className="border-tertiary flex w-full flex-col border-t-[1px] p-6 md:w-[50%] md:border-t-0 md:border-l-[1px]">
-      <h3 className="text-lg font-semibold">Playlist</h3>
-      <div className="mt-4 flex w-full flex-col gap-1 pr-4">
+    <div className="flex w-full flex-col border-t border-gray-300 p-6 md:w-[50%] md:border-t-0 md:border-l">
+      <h3 className="text-2xl font-bold mb-6">Playlist</h3>
+      <div className="flex w-full flex-col space-y-4">
         <PlayListItem
           title="Painted in Blue"
           artist="Soul Canvas"
           length="5:55"
-          isActive={true}
+          isActive={false}
         />
         <PlayListItem
           title="Tidal Drift"
@@ -34,6 +34,36 @@ const Playlist = () => {
           title="Urban Serenade"
           artist="Midnight Groove"
           length="4:54"
+          isActive={false}
+        />
+        <PlayListItem
+          title="Whispers in the Wind"
+          artist="Rust & Ruin"
+          length="6:13"
+          isActive={false}
+        />
+        <PlayListItem
+          title="Electric Fever"
+          artist="Neon Jungle"
+          length="8:41"
+          isActive={false}
+        />
+        <PlayListItem
+          title="Edge of the Abyss"
+          artist="Steel Horizon"
+          length="2:27"
+          isActive={false}
+        />
+        <PlayListItem
+          title="Golden Haze"
+          artist="Velvet Waves"
+          length="3:15"
+          isActive={false}
+        />
+        <PlayListItem
+          title="Shatter the Silence"
+          artist="Thunderclap Echo"
+          length="8:22"
           isActive={false}
         />
       </div>
