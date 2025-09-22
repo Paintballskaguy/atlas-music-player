@@ -3,8 +3,12 @@ import React from "react";
 const SongTitle = ({ title, artist }) => {
   return (
     <div className="text-center">
-      <h2 className="text-black text-3xl font-bold mb-2">{title}</h2>
-      <p className="text-gray-500 text-lg">{artist}</p>
+      <h2 className="text-custom-teal-800 dark:text-custom-teal-100 text-4xl font-black mb-3 tracking-tight leading-tight drop-shadow-sm">
+        {title}
+      </h2>
+      <p className="text-custom-blue-600 dark:text-custom-blue-300 text-xl font-medium tracking-wide">
+        {artist}
+      </p>
     </div>
   );
 };

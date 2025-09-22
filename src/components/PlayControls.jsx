@@ -9,43 +9,43 @@ const PlayControls = () => {
   };
 
   return (
-    <div className="flex items-center justify-center space-x-6">
+    <div className="flex items-center justify-center space-x-8">
       {/* Playback Speed */}
-      <button className="text-black hover:text-gray-600 text-sm font-medium">
+      <button className="text-custom-teal-600 dark:text-custom-teal-300 hover:text-custom-teal-800 dark:hover:text-custom-teal-100 text-sm font-bold tracking-wider transition-all duration-200 hover:scale-110">
         1x
       </button>
       
       {/* Previous */}
       <button 
-        className="text-black hover:text-gray-600"
+        className="text-custom-blue-600 dark:text-custom-blue-300 hover:text-custom-blue-800 dark:hover:text-custom-blue-100 p-2 rounded-full hover:bg-custom-blue-100 dark:hover:bg-custom-blue-800 transition-all duration-200 hover:scale-110"
         onClick={() => {}}
       >
-        <SkipBack size={24} />
+        <SkipBack size={28} />
       </button>
       
       {/* Play/Pause Button */}
       <button 
-        className="bg-black text-white rounded-lg p-3 hover:bg-gray-800 transition-colors"
+        className="bg-gradient-to-r from-custom-red-500 to-custom-red-600 dark:from-custom-red-600 dark:to-custom-red-700 text-white rounded-2xl p-4 hover:from-custom-red-600 hover:to-custom-red-700 dark:hover:from-custom-red-700 dark:hover:to-custom-red-800 transition-all duration-200 shadow-xl hover:shadow-2xl transform hover:scale-105 border-2 border-custom-red-400 dark:border-custom-red-500"
         onClick={handlePlayPause}
       >
         {isPlaying ? (
-          <Pause size={28} fill="white" />
+          <Pause size={32} className="text-white" />
         ) : (
-          <Play size={28} fill="white" />
+          <Play size={32} className="text-white ml-1" />
         )}
       </button>
       
       {/* Next */}
       <button 
-        className="text-black hover:text-gray-600"
+        className="text-custom-blue-600 dark:text-custom-blue-300 hover:text-custom-blue-800 dark:hover:text-custom-blue-100 p-2 rounded-full hover:bg-custom-blue-100 dark:hover:bg-custom-blue-800 transition-all duration-200 hover:scale-110"
         onClick={() => {}}
       >
-        <SkipForward size={24} />
+        <SkipForward size={28} />
       </button>
       
       {/* Repeat */}
-      <button className="text-black hover:text-gray-600">
-        <Repeat size={24} />
+      <button className="text-custom-teal-600 dark:text-custom-teal-300 hover:text-custom-teal-800 dark:hover:text-custom-teal-100 p-2 rounded-full hover:bg-custom-teal-100 dark:hover:bg-custom-teal-800 transition-all duration-200 hover:scale-110">
+        <Repeat size={28} />
       </button>
     </div>
   );
