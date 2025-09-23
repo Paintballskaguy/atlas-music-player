@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
-import { Volume2 } from 'lucide-react';
+import React from 'react';
+import { Volume2, VolumeX } from 'lucide-react';
+import { useMusicPlayer } from '../contexts/MusicPlayerContext';
 
 const VolumeControls = () => {
-  const [volume, setVolume] = useState(50);
+  const { volume, setVolume } = useMusicPlayer();
+
+  const handleVolumeChange = (e) => {
+    setVolume(parseInt(e.target.value));
+  };
+
+  const toggleMute = () => {
+    setVolume(volume > 0 ? 0 : 50);
+  };
 
   const sliderStyle = {
     background: `linear-gradient(to right, #14b8a6 0%, #14b8a6 ${volume}%, #e5e7eb ${volume}%, #e5e7eb 100%)`
@@ -15,19 +24,29 @@ const VolumeControls = () => {
   return (
     <>
       <div className="flex items-center space-x-4 w-full">
-        <div className="p-2 rounded-full bg-custom-yellow-100 dark:bg-custom-yellow-800 transition-colors duration-200">
-          <Volume2 
-            size={24} 
-            className="text-custom-yellow-700 dark:text-custom-yellow-200" 
-          />
-        </div>
+        <button 
+          onClick={toggleMute}
+          className="p-2 rounded-full bg-custom-yellow-100 dark:bg-custom-yellow-800 hover:bg-custom-yellow-200 dark:hover:bg-custom-yellow-700 transition-all duration-200 hover:scale-110"
+        >
+          {volume > 0 ? (
+            <Volume2 
+              size={24} 
+              className="text-custom-yellow-700 dark:text-custom-yellow-200" 
+            />
+          ) : (
+            <VolumeX 
+              size={24} 
+              className="text-custom-red-600 dark:text-custom-red-400" 
+            />
+          )}
+        </button>
         <div className="flex-1 relative">
           <input 
             type="range" 
             min="0" 
             max="100" 
             value={volume}
-            onChange={(e) => setVolume(e.target.value)}
+            onChange={handleVolumeChange}
             className="volume-slider w-full h-3 rounded-full appearance-none cursor-pointer transition-all duration-200 hover:scale-y-110 dark:hidden"
             style={sliderStyle}
           />
@@ -36,7 +55,7 @@ const VolumeControls = () => {
             min="0" 
             max="100" 
             value={volume}
-            onChange={(e) => setVolume(e.target.value)}
+            onChange={handleVolumeChange}
             className="volume-slider w-full h-3 rounded-full appearance-none cursor-pointer transition-all duration-200 hover:scale-y-110 hidden dark:block"
             style={darkSliderStyle}
           />
