@@ -1,6 +1,6 @@
-import { PlaylistSong, Song, Lyrics } from '../components';
+import { PlaylistSong, Song, Lyrics } from './index';
 
-const API_BASE_URL = 'http://localhost:5173/api/v1';
+const API_BASE_URL = '/api/v1';
 
 class ApiService {
   async fetchPlaylist(): Promise<PlaylistSong[]> {
