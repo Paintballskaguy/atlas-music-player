@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:5173/api/v1';
+const API_BASE_URL = '/api/v1';
 
 class ApiService {
   async fetchPlaylist() {
