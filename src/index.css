@@ -1,2 +1,97 @@
 @import "tailwindcss";
-@import "tailwindcss/theme" layer(theme);
+
+@theme {
+  /* Essential colors used in your components */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  
+  /* Gray colors for dark mode */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* Red colors */
+  --color-red-100: #fee2e2;
+  --color-red-400: #f87171;
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+  --color-red-900: #7f1d1d;
+
+  /* Blue colors */
+  --color-blue-50: #eff6ff;
+  --color-blue-100: #dbeafe;
+  --color-blue-200: #bfdbfe;
+  --color-blue-300: #93c5fd;
+  --color-blue-600: #2563eb;
+  --color-blue-800: #1e40af;
+
+  /* Teal colors */
+  --color-teal-50: #f0fdfa;
+  --color-teal-100: #ccfbf1;
+  --color-teal-200: #99f6e4;
+  --color-teal-300: #5eead4;
+  --color-teal-400: #2dd4bf;
+  --color-teal-600: #0d9488;
+  --color-teal-700: #0f766e;
+  --color-teal-800: #115e59;
+  --color-teal-900: #134e4a;
+
+  /* Yellow colors */
+  --color-yellow-100: #fef3c7;
+  --color-yellow-200: #fde68a;
+  --color-yellow-500: #f59e0b;
+  --color-yellow-700: #b45309;
+  --color-yellow-800: #92400e;
+
+  /* Custom colors for your music player */
+  --color-custom-red-50: #fef2f2;
+  --color-custom-red-100: #fee2e2;
+  --color-custom-red-200: #fecaca;
+  --color-custom-red-300: #fca5a5;
+  --color-custom-red-400: #f87171;
+  --color-custom-red-500: #ef4444;
+  --color-custom-red-600: #dc2626;
+  --color-custom-red-700: #b91c1c;
+  --color-custom-red-800: #991b1b;
+  --color-custom-red-900: #7f1d1d;
+
+  --color-custom-teal-50: #f0fdfa;
+  --color-custom-teal-100: #ccfbf1;
+  --color-custom-teal-200: #99f6e4;
+  --color-custom-teal-300: #5eead4;
+  --color-custom-teal-400: #2dd4bf;
+  --color-custom-teal-500: #14b8a6;
+  --color-custom-teal-600: #0d9488;
+  --color-custom-teal-700: #0f766e;
+  --color-custom-teal-800: #115e59;
+  --color-custom-teal-900: #134e4a;
+
+  --color-custom-blue-50: #eff6ff;
+  --color-custom-blue-100: #dbeafe;
+  --color-custom-blue-200: #bfdbfe;
+  --color-custom-blue-300: #93c5fd;
+  --color-custom-blue-400: #60a5fa;
+  --color-custom-blue-500: #3b82f6;
+  --color-custom-blue-600: #2563eb;
+  --color-custom-blue-700: #1d4ed8;
+  --color-custom-blue-800: #1e40af;
+  --color-custom-blue-900: #1e3a8a;
+
+  --color-custom-yellow-50: #fffbeb;
+  --color-custom-yellow-100: #fef3c7;
+  --color-custom-yellow-200: #fde68a;
+  --color-custom-yellow-300: #fcd34d;
+  --color-custom-yellow-400: #fbbf24;
+  --color-custom-yellow-500: #f59e0b;
+  --color-custom-yellow-600: #d97706;
+  --color-custom-yellow-700: #b45309;
+  --color-custom-yellow-800: #92400e;
+  --color-custom-yellow-900: #78350f;
+}

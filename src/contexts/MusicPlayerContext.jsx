@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
-import ApiService from '../services/api';
+import ApiService from '../components/api';
 
 const MusicPlayerContext = createContext();
 
@@ -138,27 +138,58 @@ export const MusicPlayerProvider = ({ children }) => {
   };
 
   const selectSong = async (song) => {
+    // Clear previous song data first to prevent old data from showing
+    dispatch({ type: ACTIONS.SET_CURRENT_SONG_DETAILS, payload: null });
+    dispatch({ type: ACTIONS.SET_LYRICS, payload: null });
+    
     dispatch({ type: ACTIONS.SET_CURRENT_SONG, payload: song });
     dispatch({ type: ACTIONS.SET_PLAYING, payload: false });
     dispatch({ type: ACTIONS.SET_CURRENT_TIME, payload: 0 });
+    
+    // Load new song data
     await loadSongDetails(song.id);
-    await loadLyrics(song.id);
+    // Don't auto-load lyrics - let them load on hover
   };
 
   const togglePlayPause = () => {
     dispatch({ type: ACTIONS.SET_PLAYING, payload: !state.isPlaying });
   };
 
-  const nextSong = () => {
-    const currentIndex = state.playlist.findIndex(song => song.id === state.currentSong?.id);
+  const getNextSong = () => {
+    if (!state.currentSong || !state.playlist.length) return null;
+
+    if (state.shuffle) {
+      // Get a random song that's not the current song
+      const availableSongs = state.playlist.filter(song => song.id !== state.currentSong.id);
+      if (availableSongs.length === 0) return null;
+      return availableSongs[Math.floor(Math.random() * availableSongs.length)];
+    }
+
+    // Normal next song logic
+    const currentIndex = state.playlist.findIndex(song => song.id === state.currentSong.id);
     if (currentIndex < state.playlist.length - 1) {
-      const nextSong = state.playlist[currentIndex + 1];
+      return state.playlist[currentIndex + 1];
+    }
+    
+    // Handle repeat logic
+    if (state.repeat === 'all') {
+      return state.playlist[0]; // Go back to first song
+    }
+    
+    return null; // End of playlist
+  };
+
+  const nextSong = () => {
+    const nextSong = getNextSong();
+    if (nextSong) {
       selectSong(nextSong);
     }
   };
 
   const previousSong = () => {
-    const currentIndex = state.playlist.findIndex(song => song.id === state.currentSong?.id);
+    if (!state.currentSong) return;
+    
+    const currentIndex = state.playlist.findIndex(song => song.id === state.currentSong.id);
     if (currentIndex > 0) {
       const prevSong = state.playlist[currentIndex - 1];
       selectSong(prevSong);
@@ -166,7 +197,7 @@ export const MusicPlayerProvider = ({ children }) => {
   };
 
   const setVolume = (volume) => {
-    dispatch({ type: ACTIONS.SET_VOLUME, payload: volume });
+    dispatch({ type: ACTIONS.SET_VOLUME, payload: Math.max(0, Math.min(100, volume)) });
   };
 
   const setPlaybackSpeed = (speed) => {

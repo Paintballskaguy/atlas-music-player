@@ -1,9 +1,9 @@
-import React from "react";
-import Footer from "./Footer";
+import Footer from "../components/Footer.jsx";
 import MusicPlayer from "./MusicPlayer";
 import LoadingSkeleton from "./LoadingSkeleton";
-import { DarkModeProvider } from '../contexts/DarkModeContext';
+import { DarkModeContext, DarkModeProvider } from '../contexts/DarkModeContext';
 import { MusicPlayerProvider, useMusicPlayer } from '../contexts/MusicPlayerContext';
+import { JSX } from "react";
 
 // Separate component to use the music player context
 const AppContent = () => {

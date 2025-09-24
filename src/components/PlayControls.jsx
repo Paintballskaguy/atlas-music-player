@@ -1,6 +1,7 @@
 import React from "react";
 import { Repeat, SkipBack, Play, Pause, SkipForward } from 'lucide-react';
 import { useMusicPlayer } from '../contexts/MusicPlayerContext';
+import colors from "tailwindcss/colors";
 
 const PlayControls = () => {
   const { 
@@ -37,7 +38,7 @@ const PlayControls = () => {
       >
         {playbackSpeed}x
       </button>
-      
+
       {/* Previous */}
       <button 
         className="text-custom-blue-600 dark:text-custom-blue-300 hover:text-custom-blue-800 dark:hover:text-custom-blue-100 p-2 rounded-full hover:bg-custom-blue-100 dark:hover:bg-custom-blue-800 transition-all duration-200 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed"

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useMusicPlayer } from '../contexts/MusicPlayerContext';
-import coverArtImage from '../assets/placeholder.svg';
 
 interface CoverArtProps {
   src?: string | null;
@@ -10,6 +9,7 @@ interface CoverArtProps {
 const CoverArt: React.FC<CoverArtProps> = ({ alt = "Cover Art" }) => {
   const { currentSongDetails, lyrics, loadLyrics, currentSong } = useMusicPlayer();
   const [isHovered, setIsHovered] = useState<boolean>(false);
+  const [imageError, setImageError] = useState<boolean>(false);
 
   const handleMouseEnter = async (): Promise<void> => {
     setIsHovered(true);
@@ -20,6 +20,10 @@ const CoverArt: React.FC<CoverArtProps> = ({ alt = "Cover Art" }) => {
 
   const handleMouseLeave = (): void => {
     setIsHovered(false);
+  };
+
+  const handleImageError = (): void => {
+    setImageError(true);
   };
 
   const coverSrc = currentSongDetails?.cover;
@@ -42,18 +46,17 @@ const CoverArt: React.FC<CoverArtProps> = ({ alt = "Cover Art" }) => {
       ) : null}
       
       <div className="w-full h-full flex items-center justify-center">
-        {coverSrc ? (
+        {coverSrc && !imageError ? (
           <img 
             src={coverSrc} 
             alt={alt} 
             className="w-full h-full object-cover" 
+            onError={handleImageError}
           />
         ) : (
-          <img 
-            src={coverArtImage} 
-            alt="Placeholder cover art" 
-            className="w-20 h-20 opacity-30 dark:opacity-50 filter drop-shadow-lg"
-          />
+          <div className="w-20 h-20 bg-custom-teal-600 dark:bg-custom-teal-300 rounded-full flex items-center justify-center">
+            <div className="text-white dark:text-custom-teal-800 text-2xl font-bold">♪</div>
+          </div>
         )}
       </div>
     </div>

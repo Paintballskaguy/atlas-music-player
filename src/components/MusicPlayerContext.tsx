@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useReducer, useEffect, ReactNode } from 'react';
-import ApiService from '../services/api';
-import { PlaylistSong, Song, MusicPlayerState, MusicPlayerContextType, RepeatMode } from '../types';
+import ApiService from '../components/api';
+import { PlaylistSong, Song, MusicPlayerState, MusicPlayerContextType, RepeatMode } from '../components';
 
 const MusicPlayerContext = createContext<MusicPlayerContextType | undefined>(undefined);
 
