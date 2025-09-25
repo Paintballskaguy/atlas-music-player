@@ -1,9 +1,9 @@
 import Footer from "../components/Footer.jsx";
 import MusicPlayer from "./MusicPlayer";
+import AudioPlayer from "./AudioPlayer";
 import LoadingSkeleton from "./LoadingSkeleton";
-import { DarkModeContext, DarkModeProvider } from '../contexts/DarkModeContext';
+import { DarkModeProvider } from '../contexts/DarkModeContext';
 import { MusicPlayerProvider, useMusicPlayer } from '../contexts/MusicPlayerContext.jsx';
-import { JSX } from "react";
 
 // Separate component to use the music player context
 const AppContent = () => {
@@ -32,6 +32,10 @@ const AppContent = () => {
 
   return (
     <div className="min-h-screen flex flex-col justify-between p-8 bg-gradient-to-br from-custom-teal-50 to-custom-blue-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+      {/* Hidden audio player */}
+      <AudioPlayer />
+      
+      {/* Main UI */}
       {isLoading ? <LoadingSkeleton /> : <MusicPlayer />}
       <Footer />
     </div>

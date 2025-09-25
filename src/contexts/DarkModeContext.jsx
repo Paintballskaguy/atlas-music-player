@@ -16,21 +16,29 @@ export const DarkModeProvider = ({ children }) => {
   });
 
   useEffect(() => {
+    console.log('isDark changed to:', isDark);
+    
     // Apply dark mode class to html element
+    const htmlElement = document.documentElement;
+    
     if (isDark) {
-      document.documentElement.classList.add('dark');
+      htmlElement.classList.add('dark');
+      console.log('Added dark class, classes:', htmlElement.className);
     } else {
-      document.documentElement.classList.remove('dark');
+      htmlElement.classList.remove('dark');
+      console.log('Removed dark class, classes:', htmlElement.className);
     }
+    
+    // Force a style recalculation
+    htmlElement.style.colorScheme = isDark ? 'dark' : 'light';
   }, [isDark]);
 
-  // Remove the system preference listener - it's interfering with manual toggles
-
   const toggleDarkMode = () => {
-    console.log('toggleDarkMode called, current isDark:', isDark); // Debug log
+    console.log('toggleDarkMode called, current isDark:', isDark);
     setIsDark(prev => {
-      console.log('setIsDark: changing from', prev, 'to', !prev); // Debug log
-      return !prev;
+      const newValue = !prev;
+      console.log('setIsDark: changing from', prev, 'to', newValue);
+      return newValue;
     });
   };
 
