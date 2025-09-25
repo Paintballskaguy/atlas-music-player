@@ -1,0 +1,44 @@
+name: CI - Run Tests & Coverage
+
+# 1. Define when this workflow should run
+on:
+  push:
+    branches: [ main ] # Only runs when commits are pushed to the 'main' branch
+
+# 2. Define the jobs (tasks) to be executed
+jobs:
+  test_and_coverage:
+    # Use the latest stable version of Ubuntu
+    runs-on: ubuntu-latest
+
+    # 3. Define the steps within the job
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js
+      # Assumes your project uses Node.js (common for Vitest/JavaScript projects)
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Use a recent LTS version
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        # This assumes your dependencies are listed in package.json
+        run: npm ci
+
+      # Step 4: Run unit tests and generate coverage report
+      - name: Run Vitest tests with coverage
+        run: npx vitest run --coverage
+        # Equivalent to: npm run coverage (if you set up the script in package.json)
+
+      # Optional Step 5: Upload the coverage report artifact
+      # This is useful if you want to inspect the full HTML report later.
+      - name: Upload coverage report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: vitest-coverage-report
+          path: coverage/
+          if-no-files-found: warn # Don't fail if the folder wasn't created
