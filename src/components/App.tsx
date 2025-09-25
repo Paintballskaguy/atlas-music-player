@@ -2,7 +2,7 @@ import Footer from "../components/Footer.jsx";
 import MusicPlayer from "./MusicPlayer";
 import LoadingSkeleton from "./LoadingSkeleton";
 import { DarkModeContext, DarkModeProvider } from '../contexts/DarkModeContext';
-import { MusicPlayerProvider, useMusicPlayer } from '../contexts/MusicPlayerContext';
+import { MusicPlayerProvider, useMusicPlayer } from '../contexts/MusicPlayerContext.jsx';
 import { JSX } from "react";
 
 // Separate component to use the music player context

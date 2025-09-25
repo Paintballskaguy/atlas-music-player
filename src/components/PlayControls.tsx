@@ -1,7 +1,6 @@
 import { Repeat, SkipBack, Play, Pause, SkipForward, Shuffle } from 'lucide-react';
 import { useMusicPlayer } from '../components/MusicPlayerContext.tsx';
 import React from "react";
-import colors from "tailwindcss/colors";
 
 const PlayControls: React.FC = () => {
   const { 

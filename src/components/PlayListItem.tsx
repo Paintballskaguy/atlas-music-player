@@ -14,22 +14,25 @@ const PlayListItem: React.FC<PlayListItemProps> = ({
   isActive = false 
 }) => {
   // Format duration to HH:MM format
-  const formatDuration = (duration: string): string => {
-    // If already in HH:MM format, return as is
-    if (duration.includes(':')) {
-      return duration;
-    }
-    
-    // If in seconds, convert to HH:MM
-    const totalSeconds = parseInt(duration);
-    if (!isNaN(totalSeconds)) {
-      const minutes = Math.floor(totalSeconds / 60);
-      const seconds = totalSeconds % 60;
-      return `${minutes}:${seconds.toString().padStart(2, '0')}`;
-    }
-    
-    return duration; // Return original if can't parse
-  };
+  const formatDuration = (duration: string | number): string => {
+  // Convert to string if it's a number
+  const durationStr = duration.toString();
+  
+  // If already in MM:SS format, return as is
+  if (typeof duration === 'string' && duration.includes(':')) {
+    return duration;
+  }
+  
+  // If in seconds (number), convert to MM:SS
+  const totalSeconds = typeof duration === 'number' ? duration : parseInt(durationStr);
+  if (!isNaN(totalSeconds)) {
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  }
+  
+  return durationStr; // Return original if can't parse
+};
 
   return (
     <div className={`flex items-start justify-between py-4 px-4 cursor-pointer rounded-2xl transition-all duration-300 transform hover:scale-105 ${
