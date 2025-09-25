@@ -1,0 +1,142 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`VolumeControls > renders with default volume (50%) 1`] = `
+<div
+  class="flex items-center space-x-4 w-full"
+>
+  <button
+    aria-label="Mute"
+    class="p-2 rounded-full bg-custom-yellow-100 dark:bg-custom-yellow-800 hover:bg-custom-yellow-200 dark:hover:bg-custom-yellow-700 transition-all duration-200 hover:scale-110"
+  >
+    <div
+      class="text-custom-yellow-700 dark:text-custom-yellow-200"
+      data-testid="volume-icon"
+      data-type="volume2"
+    >
+      Volume2Icon
+    </div>
+  </button>
+  <div
+    class="flex-1 relative"
+  >
+    <input
+      aria-label="Volume"
+      class="volume-slider w-full h-3 rounded-full appearance-none cursor-pointer transition-all duration-200 hover:scale-y-110 dark:hidden"
+      max="100"
+      min="0"
+      style="background: linear-gradient(to right, #14b8a6 0%, #14b8a6 50%, #e5e7eb 50%, #e5e7eb 100%);"
+      type="range"
+      value="50"
+    />
+    <input
+      aria-label="Volume"
+      class="volume-slider w-full h-3 rounded-full appearance-none cursor-pointer transition-all duration-200 hover:scale-y-110 hidden dark:block"
+      max="100"
+      min="0"
+      style="background: linear-gradient(to right, #5eead4 0%, #5eead4 50%, #4b5563 50%, #4b5563 100%);"
+      type="range"
+      value="50"
+    />
+  </div>
+  <span
+    class="text-sm font-bold text-custom-teal-600 dark:text-custom-teal-300 min-w-[3rem] text-right"
+  >
+    50
+    %
+  </span>
+</div>
+`;
+
+exports[`VolumeControls > renders with volume at 0% (muted) 1`] = `
+<div
+  class="flex items-center space-x-4 w-full"
+>
+  <button
+    aria-label="Unmute"
+    class="p-2 rounded-full bg-custom-yellow-100 dark:bg-custom-yellow-800 hover:bg-custom-yellow-200 dark:hover:bg-custom-yellow-700 transition-all duration-200 hover:scale-110"
+  >
+    <div
+      class="text-custom-red-600 dark:text-custom-red-400"
+      data-testid="volume-icon"
+      data-type="volumex"
+    >
+      VolumeXIcon
+    </div>
+  </button>
+  <div
+    class="flex-1 relative"
+  >
+    <input
+      aria-label="Volume"
+      class="volume-slider w-full h-3 rounded-full appearance-none cursor-pointer transition-all duration-200 hover:scale-y-110 dark:hidden"
+      max="100"
+      min="0"
+      style="background: linear-gradient(to right, #14b8a6 0%, #14b8a6 0%, #e5e7eb 0%, #e5e7eb 100%);"
+      type="range"
+      value="0"
+    />
+    <input
+      aria-label="Volume"
+      class="volume-slider w-full h-3 rounded-full appearance-none cursor-pointer transition-all duration-200 hover:scale-y-110 hidden dark:block"
+      max="100"
+      min="0"
+      style="background: linear-gradient(to right, #5eead4 0%, #5eead4 0%, #4b5563 0%, #4b5563 100%);"
+      type="range"
+      value="0"
+    />
+  </div>
+  <span
+    class="text-sm font-bold text-custom-teal-600 dark:text-custom-teal-300 min-w-[3rem] text-right"
+  >
+    0
+    %
+  </span>
+</div>
+`;
+
+exports[`VolumeControls > renders with volume at 100% 1`] = `
+<div
+  class="flex items-center space-x-4 w-full"
+>
+  <button
+    aria-label="Mute"
+    class="p-2 rounded-full bg-custom-yellow-100 dark:bg-custom-yellow-800 hover:bg-custom-yellow-200 dark:hover:bg-custom-yellow-700 transition-all duration-200 hover:scale-110"
+  >
+    <div
+      class="text-custom-yellow-700 dark:text-custom-yellow-200"
+      data-testid="volume-icon"
+      data-type="volume2"
+    >
+      Volume2Icon
+    </div>
+  </button>
+  <div
+    class="flex-1 relative"
+  >
+    <input
+      aria-label="Volume"
+      class="volume-slider w-full h-3 rounded-full appearance-none cursor-pointer transition-all duration-200 hover:scale-y-110 dark:hidden"
+      max="100"
+      min="0"
+      style="background: linear-gradient(to right, #14b8a6 0%, #14b8a6 100%, #e5e7eb 100%, #e5e7eb 100%);"
+      type="range"
+      value="100"
+    />
+    <input
+      aria-label="Volume"
+      class="volume-slider w-full h-3 rounded-full appearance-none cursor-pointer transition-all duration-200 hover:scale-y-110 hidden dark:block"
+      max="100"
+      min="0"
+      style="background: linear-gradient(to right, #5eead4 0%, #5eead4 100%, #4b5563 100%, #4b5563 100%);"
+      type="range"
+      value="100"
+    />
+  </div>
+  <span
+    class="text-sm font-bold text-custom-teal-600 dark:text-custom-teal-300 min-w-[3rem] text-right"
+  >
+    100
+    %
+  </span>
+</div>
+`;

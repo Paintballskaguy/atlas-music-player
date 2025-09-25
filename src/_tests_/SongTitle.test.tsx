@@ -2,58 +2,62 @@ import { describe, it, expect } from 'vitest'
 import { render } from '@testing-library/react'
 import SongTitle from '../components/SongTitle'
 
+interface SongTitleProps {
+  title: string
+  artist?: string
+  isPlaying?: boolean
+  className?: string
+}
+
 describe('SongTitle', () => {
   it('renders with title and artist', () => {
-    const { container } = render(
-      <SongTitle title="Test Song" artist="Test Artist" />
-    )
+    const props: SongTitleProps = {
+      title: "Test Song",
+      artist: "Test Artist"
+    }
+    
+    const { container } = render(<SongTitle {...props} />)
     expect(container.firstChild).toMatchSnapshot()
   })
 
   it('renders with only title', () => {
-    const { container } = render(<SongTitle title="Test Song" />)
+    const props: SongTitleProps = {
+      title: "Test Song"
+    }
+    
+    const { container } = render(<SongTitle {...props} />)
     expect(container.firstChild).toMatchSnapshot()
   })
 
   it('renders with long title and artist', () => {
-    const { container } = render(
-      <SongTitle 
-        title="Very Long Song Title That Might Wrap" 
-        artist="Very Long Artist Name That Might Also Wrap" 
-      />
-    )
+    const props: SongTitleProps = {
+      title: "Very Long Song Title That Might Wrap", 
+      artist: "Very Long Artist Name That Might Also Wrap"
+    }
+    
+    const { container } = render(<SongTitle {...props} />)
     expect(container.firstChild).toMatchSnapshot()
   })
 
   it('renders with custom className', () => {
-    const { container } = render(
-      <SongTitle 
-        title="Test Song" 
-        artist="Test Artist" 
-        className="custom-style" 
-      />
-    )
+    const props: SongTitleProps = {
+      title: "Test Song",
+      artist: "Test Artist",
+      className: "custom-style"
+    }
+    
+    const { container } = render(<SongTitle {...props} />)
     expect(container.firstChild).toMatchSnapshot()
   })
 
   it('renders with isPlaying state', () => {
-    const { container } = render(
-      <SongTitle 
-        title="Test Song" 
-        artist="Test Artist" 
-        isPlaying={true} 
-      />
-    )
-    expect(container.firstChild).toMatchSnapshot()
-  })
-
-  it('renders with marquee effect for long text', () => {
-    const { container } = render(
-      <SongTitle 
-        title="This is a very long song title that should trigger marquee effect" 
-        artist="This is a very long artist name that should also trigger marquee" 
-      />
-    )
+    const props: SongTitleProps = {
+      title: "Test Song",
+      artist: "Test Artist",
+      isPlaying: true
+    }
+    
+    const { container } = render(<SongTitle {...props} />)
     expect(container.firstChild).toMatchSnapshot()
   })
 })

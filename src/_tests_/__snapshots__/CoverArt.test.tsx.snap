@@ -1,0 +1,109 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CoverArt > handles image error by showing fallback 1`] = `
+<div
+  class="w-full aspect-square bg-gradient-to-br from-custom-teal-100 to-custom-blue-200 dark:from-custom-teal-800 dark:to-custom-blue-900 rounded-3xl overflow-hidden flex items-center justify-center shadow-2xl border-4 border-custom-yellow-200 dark:border-custom-yellow-600 transition-all duration-300 relative cursor-pointer"
+>
+  <div
+    class="w-full h-full flex items-center justify-center"
+  >
+    <img
+      alt="Test Cover"
+      class="w-full h-full object-cover"
+      src="https://invalid-url.com/cover.jpg"
+    />
+  </div>
+</div>
+`;
+
+exports[`CoverArt > renders with cover image 1`] = `
+<div
+  class="w-full aspect-square bg-gradient-to-br from-custom-teal-100 to-custom-blue-200 dark:from-custom-teal-800 dark:to-custom-blue-900 rounded-3xl overflow-hidden flex items-center justify-center shadow-2xl border-4 border-custom-yellow-200 dark:border-custom-yellow-600 transition-all duration-300 relative cursor-pointer"
+>
+  <div
+    class="w-full h-full flex items-center justify-center"
+  >
+    <img
+      alt="Test Album Cover"
+      class="w-full h-full object-cover"
+      src="https://example.com/cover.jpg"
+    />
+  </div>
+</div>
+`;
+
+exports[`CoverArt > renders with current song but no cover image 1`] = `
+<div
+  class="w-full aspect-square bg-gradient-to-br from-custom-teal-100 to-custom-blue-200 dark:from-custom-teal-800 dark:to-custom-blue-900 rounded-3xl overflow-hidden flex items-center justify-center shadow-2xl border-4 border-custom-yellow-200 dark:border-custom-yellow-600 transition-all duration-300 relative cursor-pointer"
+>
+  <div
+    class="w-full h-full flex items-center justify-center"
+  >
+    <div
+      class="w-20 h-20 bg-custom-teal-600 dark:bg-custom-teal-300 rounded-full flex items-center justify-center"
+    >
+      <div
+        class="text-white dark:text-custom-teal-800 text-2xl font-bold"
+      >
+        ♪
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CoverArt > renders with custom alt text 1`] = `
+<div
+  class="w-full aspect-square bg-gradient-to-br from-custom-teal-100 to-custom-blue-200 dark:from-custom-teal-800 dark:to-custom-blue-900 rounded-3xl overflow-hidden flex items-center justify-center shadow-2xl border-4 border-custom-yellow-200 dark:border-custom-yellow-600 transition-all duration-300 relative cursor-pointer"
+>
+  <div
+    class="w-full h-full flex items-center justify-center"
+  >
+    <div
+      class="w-20 h-20 bg-custom-teal-600 dark:bg-custom-teal-300 rounded-full flex items-center justify-center"
+    >
+      <div
+        class="text-white dark:text-custom-teal-800 text-2xl font-bold"
+      >
+        ♪
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CoverArt > renders with default state (no cover image) 1`] = `
+<div
+  class="w-full aspect-square bg-gradient-to-br from-custom-teal-100 to-custom-blue-200 dark:from-custom-teal-800 dark:to-custom-blue-900 rounded-3xl overflow-hidden flex items-center justify-center shadow-2xl border-4 border-custom-yellow-200 dark:border-custom-yellow-600 transition-all duration-300 relative cursor-pointer"
+>
+  <div
+    class="w-full h-full flex items-center justify-center"
+  >
+    <div
+      class="w-20 h-20 bg-custom-teal-600 dark:bg-custom-teal-300 rounded-full flex items-center justify-center"
+    >
+      <div
+        class="text-white dark:text-custom-teal-800 text-2xl font-bold"
+      >
+        ♪
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CoverArt > renders with lyrics available on hover 1`] = `
+<div
+  class="w-full aspect-square bg-gradient-to-br from-custom-teal-100 to-custom-blue-200 dark:from-custom-teal-800 dark:to-custom-blue-900 rounded-3xl overflow-hidden flex items-center justify-center shadow-2xl border-4 border-custom-yellow-200 dark:border-custom-yellow-600 transition-all duration-300 relative cursor-pointer"
+>
+  <div
+    class="w-full h-full flex items-center justify-center"
+  >
+    <img
+      alt="Test Cover"
+      class="w-full h-full object-cover"
+      src="https://example.com/cover.jpg"
+    />
+  </div>
+</div>
+`;
