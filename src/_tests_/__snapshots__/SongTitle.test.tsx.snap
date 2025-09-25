@@ -1,0 +1,101 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SongTitle > renders with custom className 1`] = `
+<div
+  class="text-center"
+>
+  <h2
+    class="text-custom-teal-800 dark:text-custom-teal-100 text-4xl font-black mb-3 tracking-tight leading-tight drop-shadow-sm"
+  >
+    Test Song
+  </h2>
+  <p
+    class="text-custom-blue-600 dark:text-custom-blue-300 text-xl font-medium tracking-wide"
+  >
+    Test Artist
+  </p>
+</div>
+`;
+
+exports[`SongTitle > renders with isPlaying state 1`] = `
+<div
+  class="text-center"
+>
+  <h2
+    class="text-custom-teal-800 dark:text-custom-teal-100 text-4xl font-black mb-3 tracking-tight leading-tight drop-shadow-sm"
+  >
+    Test Song
+  </h2>
+  <p
+    class="text-custom-blue-600 dark:text-custom-blue-300 text-xl font-medium tracking-wide"
+  >
+    Test Artist
+  </p>
+</div>
+`;
+
+exports[`SongTitle > renders with long title and artist 1`] = `
+<div
+  class="text-center"
+>
+  <h2
+    class="text-custom-teal-800 dark:text-custom-teal-100 text-4xl font-black mb-3 tracking-tight leading-tight drop-shadow-sm"
+  >
+    Very Long Song Title That Might Wrap
+  </h2>
+  <p
+    class="text-custom-blue-600 dark:text-custom-blue-300 text-xl font-medium tracking-wide"
+  >
+    Very Long Artist Name That Might Also Wrap
+  </p>
+</div>
+`;
+
+exports[`SongTitle > renders with marquee effect for long text 1`] = `
+<div
+  class="text-center"
+>
+  <h2
+    class="text-custom-teal-800 dark:text-custom-teal-100 text-4xl font-black mb-3 tracking-tight leading-tight drop-shadow-sm"
+  >
+    This is a very long song title that should trigger marquee effect
+  </h2>
+  <p
+    class="text-custom-blue-600 dark:text-custom-blue-300 text-xl font-medium tracking-wide"
+  >
+    This is a very long artist name that should also trigger marquee
+  </p>
+</div>
+`;
+
+exports[`SongTitle > renders with only title 1`] = `
+<div
+  class="text-center"
+>
+  <h2
+    class="text-custom-teal-800 dark:text-custom-teal-100 text-4xl font-black mb-3 tracking-tight leading-tight drop-shadow-sm"
+  >
+    Test Song
+  </h2>
+  <p
+    class="text-custom-blue-600 dark:text-custom-blue-300 text-xl font-medium tracking-wide"
+  />
+</div>
+`;
+
+exports[`SongTitle > renders with title and artist 1`] = `
+<div
+  class="text-center"
+>
+  <h2
+    class="text-custom-teal-800 dark:text-custom-teal-100 text-4xl font-black mb-3 tracking-tight leading-tight drop-shadow-sm"
+  >
+    Test Song
+  </h2>
+  <p
+    class="text-custom-blue-600 dark:text-custom-blue-300 text-xl font-medium tracking-wide"
+  >
+    Test Artist
+  </p>
+</div>
+`;
