@@ -4,6 +4,10 @@
   /* Essential colors used in your components */
   --color-white: #ffffff;
   --color-black: #000000;
+
+  /* Configure dark mode */
+  --default-transition-duration: 150ms;
+  --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   
   /* Gray colors for dark mode */
   --color-gray-50: #f9fafb;
@@ -94,4 +98,14 @@
   --color-custom-yellow-700: #b45309;
   --color-custom-yellow-800: #92400e;
   --color-custom-yellow-900: #78350f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+:root.dark {
+  color-scheme: dark;
 }
