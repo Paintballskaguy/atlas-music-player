@@ -1,5 +1,5 @@
 import { Repeat, SkipBack, Play, Pause, SkipForward, Shuffle } from 'lucide-react';
-import { useMusicPlayer } from '../components/MusicPlayerContext.tsx';
+import { useMusicPlayer } from '../components/MusicPlayerContext.jsx';
 import React from "react";
 
 const PlayControls: React.FC = () => {
