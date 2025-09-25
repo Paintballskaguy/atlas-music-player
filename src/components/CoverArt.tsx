@@ -39,7 +39,7 @@ const CoverArt: React.FC<CoverArtProps> = ({ alt = "Cover Art" }) => {
           <div className="text-white text-center max-h-full overflow-y-auto">
             <h3 className="font-bold text-lg mb-2">Lyrics</h3>
             <div className="text-sm whitespace-pre-line">
-              {lyrics.lyrics}
+              {lyrics}
             </div>
           </div>
         </div>

@@ -42,6 +42,7 @@ const VolumeControls: React.FC = () => {
             />
           )}
         </button>
+        
         <div className="flex-1 relative">
           <input 
             type="range" 
@@ -64,6 +65,7 @@ const VolumeControls: React.FC = () => {
             aria-label="Volume"
           />
         </div>
+        
         <span className="text-sm font-bold text-custom-teal-600 dark:text-custom-teal-300 min-w-[3rem] text-right">
           {volume}%
         </span>
@@ -83,20 +85,6 @@ const VolumeControls: React.FC = () => {
             transition: all 0.2s ease;
           }
           
-          .volume-slider::-moz-range-thumb:hover {
-            background: #b91c1c;
-            transform: scale(1.1);
-          }
-        `
-      }} />
-    </>
-  );
-};
-
-export default VolumeControls;0.3);
-            transition: all 0.2s ease;
-          }
-          
           .volume-slider::-webkit-slider-thumb:hover {
             background: #b91c1c;
             transform: scale(1.1);
@@ -110,4 +98,19 @@ export default VolumeControls;0.3);
             background: #dc2626;
             cursor: pointer;
             border: 3px solid white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0,
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
+          }
+          
+          .volume-slider::-moz-range-thumb:hover {
+            background: #b91c1c;
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+          }
+        `
+      }} />
+    </>
+  );
+};
+
+export default VolumeControls;
