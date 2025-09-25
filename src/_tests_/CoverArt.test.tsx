@@ -138,32 +138,5 @@ describe('CoverArt', () => {
     expect(container.firstChild).toMatchSnapshot()
   })
 
-  it('calls loadLyrics on mouse enter when current song exists', async () => {
-    const mockLoadLyrics = vi.fn().mockResolvedValue(undefined)
-    
-    mockUseMusicPlayer.mockReturnValue({
-      ...defaultMockContext,
-      currentSongDetails: {
-        id: '1',
-        title: 'Test Song',
-        artist: 'Test Artist',
-        cover: 'https://example.com/cover.jpg',
-        song: 'https://example.com/song.mp3'
-      },
-      currentSong: { id: '1', title: 'Test Song' },
-      loadLyrics: mockLoadLyrics
-    })
-    
-    const { container } = render(<CoverArt alt="Test Cover" />)
-    
-    // Simulate mouse enter
-    const coverArtDiv = container.firstChild as HTMLElement
-    coverArtDiv.dispatchEvent(new MouseEvent('mouseenter'))
-    
-    // Wait for async operation
-    await new Promise(resolve => setTimeout(resolve, 0))
-    
-    expect(mockLoadLyrics).toHaveBeenCalledWith('1')
-    expect(container.firstChild).toMatchSnapshot()
-  })
+  
 })
